@@ -1,4 +1,6 @@
 const path = require('path')
+const htmlWebpackPlugin = require('html-webpack-plugin')
+const HotModuleReplacementPlugin = require('webpack').HotModuleReplacementPlugin
 
 module.exports = {
     entry: './src/main.js',
@@ -32,5 +34,16 @@ module.exports = {
                 loader: 'babel-loader'
             }
         }]
+    },
+    plugins: [
+        new htmlWebpackPlugin({
+            template: path.join(__dirname, 'src', 'index.html')
+        }),
+        new HotModuleReplacementPlugin()
+    ],
+    devServer: {
+        hot: true,
+        port: 9999,
+        open: true
     }
 }
