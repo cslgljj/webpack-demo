@@ -1,0 +1,10 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+body {
+    background-color: pink;
+    background-image: url('../images/1.jpg')
+}
